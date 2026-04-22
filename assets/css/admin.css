@@ -1,0 +1,687 @@
+/* ============================================================
+   StellarSavers AI Social Commerce — Admin Styles
+   ============================================================ */
+
+:root {
+  --ssca-primary:   #1e40af;
+  --ssca-primary-l: #3b82f6;
+  --ssca-accent:    #7c3aed;
+  --ssca-success:   #16a34a;
+  --ssca-danger:    #dc2626;
+  --ssca-warning:   #d97706;
+  --ssca-gray:      #6b7280;
+  --ssca-light:     #f8fafc;
+  --ssca-border:    #e5e7eb;
+  --ssca-radius:    10px;
+  --ssca-shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --ssca-shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+}
+
+/* ── Wrap ── */
+.ssca-wrap { max-width: 1400px; margin: 0; padding: 20px 20px 40px; }
+.ssca-wrap * { box-sizing: border-box; }
+
+/* ── Page Header ── */
+.ssca-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, var(--ssca-primary), var(--ssca-accent));
+  border-radius: var(--ssca-radius);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ssca-logo { display: flex; align-items: center; gap: 12px; }
+.ssca-logo-icon { font-size: 28px; }
+.ssca-logo h1 { color: white; font-size: 18px; margin: 0; font-weight: 700; }
+.ssca-logo small { color: #bfdbfe; font-size: 12px; }
+.ssca-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.ssca-nav-item {
+  color: #bfdbfe;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: background .15s, color .15s;
+}
+.ssca-nav-item:hover  { background: rgba(255,255,255,.15); color: white; }
+.ssca-nav-active      { background: rgba(255,255,255,.2) !important; color: white !important; font-weight: 600; }
+
+/* ── Season Banner ── */
+.ssca-season-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-radius: var(--ssca-radius);
+  margin-bottom: 20px;
+  color: white;
+}
+.ssca-season-emoji { font-size: 28px; }
+.ssca-season-banner strong { display: block; font-size: 15px; }
+.ssca-season-banner span   { font-size: 13px; opacity: .85; }
+.ssca-season-banner a { margin-left: auto; }
+
+/* ── Stat Grid ── */
+.ssca-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.ssca-stat-card {
+  background: white;
+  border-radius: var(--ssca-radius);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--ssca-shadow);
+  border: 1px solid var(--ssca-border);
+  transition: transform .15s, box-shadow .15s;
+}
+.ssca-stat-card:hover { transform: translateY(-1px); box-shadow: var(--ssca-shadow-md); }
+.ssca-stat-icon   { font-size: 28px; }
+.ssca-stat-value  { font-size: 24px; font-weight: 700; color: #111827; line-height: 1; }
+.ssca-stat-label  { font-size: 12px; color: var(--ssca-gray); margin-top: 4px; }
+
+/* Stat colors */
+.ssca-stat-blue   { border-left: 4px solid var(--ssca-primary); }
+.ssca-stat-green  { border-left: 4px solid var(--ssca-success); }
+.ssca-stat-purple { border-left: 4px solid var(--ssca-accent); }
+.ssca-stat-orange { border-left: 4px solid var(--ssca-warning); }
+.ssca-stat-teal   { border-left: 4px solid #0891b2; }
+.ssca-stat-gold   { border-left: 4px solid #ca8a04; }
+
+/* ── Dashboard Grid ── */
+.ssca-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.ssca-card-full { grid-column: 1 / -1; }
+
+/* ── Cards ── */
+.ssca-card {
+  background: white;
+  border-radius: var(--ssca-radius);
+  border: 1px solid var(--ssca-border);
+  box-shadow: var(--ssca-shadow);
+  overflow: hidden;
+}
+.ssca-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ssca-border);
+  background: var(--ssca-light);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ssca-card-header h2 { margin: 0; font-size: 15px; font-weight: 600; color: #111827; }
+.ssca-card-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+/* ── Tables ── */
+.ssca-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ssca-table th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ssca-gray);
+  background: var(--ssca-light);
+  border-bottom: 1px solid var(--ssca-border);
+}
+.ssca-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+.ssca-table tr:last-child td { border-bottom: none; }
+.ssca-table tr:hover td { background: #f9fafb; }
+.ssca-winner-cell { background: #fef9c3 !important; font-weight: 700; }
+
+/* ── Buttons ── */
+.ssca-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.ssca-btn-primary   { background: var(--ssca-primary); color: white; border-color: var(--ssca-primary); }
+.ssca-btn-primary:hover { background: #1e3a8a; }
+.ssca-btn-secondary { background: white; color: #374151; border-color: var(--ssca-border); }
+.ssca-btn-secondary:hover { background: var(--ssca-light); }
+.ssca-btn-danger    { background: #fee2e2; color: var(--ssca-danger); border-color: #fca5a5; }
+.ssca-btn-white     { background: rgba(255,255,255,.2); color: white; border-color: rgba(255,255,255,.3); }
+.ssca-btn-white:hover { background: rgba(255,255,255,.3); }
+.ssca-btn-sm  { padding: 4px 10px; font-size: 12px; }
+.ssca-btn-lg  { padding: 10px 20px; font-size: 14px; }
+.ssca-btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  opacity: .7;
+  transition: opacity .15s;
+}
+.ssca-btn-icon:hover { opacity: 1; }
+
+/* ── Badges ── */
+.ssca-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.ssca-badge-green  { background: #dcfce7; color: #166534; }
+.ssca-badge-blue   { background: #dbeafe; color: #1e40af; }
+.ssca-badge-yellow { background: #fef9c3; color: #854d0e; }
+.ssca-badge-red    { background: #fee2e2; color: #991b1b; }
+.ssca-badge-gray   { background: #f3f4f6; color: #374151; }
+
+.ssca-status-badge { @extend .ssca-badge; }
+.ssca-status-green  { background: #dcfce7; color: #166534; }
+.ssca-status-blue   { background: #dbeafe; color: #1e40af; }
+.ssca-status-yellow { background: #fef9c3; color: #854d0e; }
+.ssca-status-red    { background: #fee2e2; color: #991b1b; }
+.ssca-status-gray   { background: #f3f4f6; color: #374151; }
+
+.ssca-platform-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.ssca-variant-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #f3f4f6;
+  color: #374151;
+}
+.ssca-variant-a    { background: #dbeafe; color: #1e40af; }
+.ssca-variant-b    { background: #f3e8ff; color: #6b21a8; }
+.ssca-variant-deal { background: #fee2e2; color: #991b1b; }
+.ssca-variant-evergreen { background: #dcfce7; color: #166534; }
+
+/* ── Product Cell ── */
+.ssca-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ssca-product-cell img {
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--ssca-border);
+}
+.ssca-product-cell strong { display: block; font-size: 13px; }
+.ssca-product-cell small  { color: var(--ssca-gray); font-size: 12px; }
+
+/* ── Row Actions ── */
+.ssca-row-actions { display: flex; gap: 4px; }
+
+/* ── Health List ── */
+.ssca-health-list  { padding: 12px 16px; }
+.ssca-health-item  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 13px;
+}
+.ssca-health-item:last-child { border-bottom: none; }
+.ssca-health-msg   { font-size: 12px; }
+.ssca-health-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-top: 1px solid var(--ssca-border);
+  font-size: 12px;
+  color: var(--ssca-gray);
+  background: var(--ssca-light);
+}
+
+/* ── Queue Info ── */
+.ssca-queue-info   { padding: 8px 16px; }
+.ssca-queue-item   {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 13px;
+}
+.ssca-queue-item:last-child { border-bottom: none; }
+
+/* ── Winners ── */
+.ssca-winners-list { padding: 8px 16px; }
+.ssca-winner-item  {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.ssca-winner-item:last-child { border-bottom: none; }
+.ssca-winner-rank  {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--ssca-primary);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ssca-winner-item img { border-radius: 4px; object-fit: cover; }
+.ssca-winner-info strong { display: block; font-size: 13px; }
+.ssca-winner-info small  { color: var(--ssca-gray); font-size: 11px; }
+
+/* ── Empty State ── */
+.ssca-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ssca-gray);
+}
+.ssca-empty-icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Modal ── */
+.ssca-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.ssca-modal-content {
+  background: white;
+  border-radius: var(--ssca-radius);
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+.ssca-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ssca-border);
+  position: sticky;
+  top: 0;
+  background: white;
+}
+.ssca-modal-header h3 { margin: 0; font-size: 16px; }
+.ssca-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--ssca-gray);
+}
+.ssca-modal-body { padding: 20px; }
+
+/* Post preview in modal */
+.ssca-post-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ssca-post-preview img { width: 100%; border-radius: 8px; }
+.ssca-post-preview-caption {
+  background: var(--ssca-light);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* ── Content Calendar ── */
+.ssca-calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ssca-calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ssca-calendar-nav h2 { margin: 0; font-size: 18px; min-width: 180px; text-align: center; }
+.ssca-calendar-legend { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ssca-gray); }
+.ssca-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid var(--ssca-border);
+  border-radius: var(--ssca-radius);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--ssca-shadow);
+}
+.ssca-cal-header {
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ssca-gray);
+  background: var(--ssca-light);
+  border-bottom: 1px solid var(--ssca-border);
+}
+.ssca-cal-day {
+  min-height: 100px;
+  padding: 8px;
+  border-right: 1px solid var(--ssca-border);
+  border-bottom: 1px solid var(--ssca-border);
+  cursor: pointer;
+  transition: background .1s;
+  position: relative;
+}
+.ssca-cal-day:hover    { background: #f9fafb; }
+.ssca-cal-empty        { cursor: default; background: #fafafa; }
+.ssca-cal-today        { background: #eff6ff !important; }
+.ssca-cal-today .ssca-cal-day-num { color: var(--ssca-primary); font-weight: 700; }
+.ssca-cal-has-posts    { }
+.ssca-cal-day-num      { font-size: 13px; font-weight: 500; color: #374151; }
+.ssca-today-dot        { color: var(--ssca-primary); margin-left: 4px; font-size: 8px; }
+.ssca-cal-dots         { display: flex; gap: 3px; margin: 4px 0; flex-wrap: wrap; }
+.ssca-cal-posts        { margin-top: 4px; display: flex; flex-direction: column; gap: 2px; }
+.ssca-cal-post-chip {
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #f3f4f6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.ssca-cal-post-chip:hover { background: #e5e7eb; }
+.ssca-cal-more { font-size: 10px; color: var(--ssca-gray); padding: 1px 0; }
+
+/* Dots */
+.ssca-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.ssca-dot-green  { background: var(--ssca-success); }
+.ssca-dot-blue   { background: var(--ssca-primary); }
+.ssca-dot-yellow { background: var(--ssca-warning); }
+.ssca-dot-red    { background: var(--ssca-danger); }
+
+/* Day detail panel */
+.ssca-day-panel {
+  background: white;
+  border: 1px solid var(--ssca-border);
+  border-radius: var(--ssca-radius);
+  box-shadow: var(--ssca-shadow-md);
+  margin-top: 16px;
+}
+.ssca-day-panel-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--ssca-border);
+}
+.ssca-day-panel-header h3 { margin: 0; }
+.ssca-day-panel-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ── Settings ── */
+.ssca-settings-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.ssca-settings-nav {
+  background: white;
+  border: 1px solid var(--ssca-border);
+  border-radius: var(--ssca-radius);
+  overflow: hidden;
+  box-shadow: var(--ssca-shadow);
+  position: sticky;
+  top: 40px;
+}
+.ssca-settings-nav-item {
+  display: block;
+  padding: 11px 16px;
+  font-size: 13px;
+  color: #374151;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ssca-border);
+  transition: background .1s;
+}
+.ssca-settings-nav-item:last-child { border-bottom: none; }
+.ssca-settings-nav-item:hover  { background: var(--ssca-light); }
+.ssca-settings-nav-item.active { background: #eff6ff; color: var(--ssca-primary); font-weight: 600; }
+.ssca-settings-content {
+  background: white;
+  border: 1px solid var(--ssca-border);
+  border-radius: var(--ssca-radius);
+  box-shadow: var(--ssca-shadow);
+  overflow: hidden;
+}
+.ssca-settings-section { padding: 24px; }
+.ssca-settings-section h2 { margin: 0 0 4px; font-size: 17px; }
+.ssca-desc { color: var(--ssca-gray); font-size: 13px; margin: 0 0 20px; }
+.ssca-settings-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--ssca-border);
+  background: var(--ssca-light);
+}
+
+/* ── Field Grid ── */
+.ssca-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.ssca-field-full { grid-column: 1 / -1; }
+.ssca-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ssca-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+.ssca-field input[type="text"],
+.ssca-field input[type="email"],
+.ssca-field input[type="number"],
+.ssca-field input[type="password"],
+.ssca-field input[type="time"],
+.ssca-field input[type="date"],
+.ssca-field select,
+.ssca-field textarea {
+  padding: 8px 12px;
+  border: 1px solid var(--ssca-border);
+  border-radius: 6px;
+  font-size: 13px;
+  color: #111827;
+  background: white;
+  width: 100%;
+  transition: border-color .15s, box-shadow .15s;
+}
+.ssca-field input:focus,
+.ssca-field select:focus,
+.ssca-field textarea:focus {
+  outline: none;
+  border-color: var(--ssca-primary-l);
+  box-shadow: 0 0 0 3px rgba(59,130,246,.1);
+}
+.ssca-field small { font-size: 11px; color: var(--ssca-gray); }
+
+/* ── API Blocks ── */
+.ssca-api-block {
+  border: 1px solid var(--ssca-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.ssca-api-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.ssca-api-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.ssca-api-header h3 { margin: 0 0 4px; font-size: 15px; }
+.ssca-health-inline { display: inline-block; }
+
+/* ── Toggle Switch ── */
+.ssca-toggle { position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer; }
+.ssca-toggle input { opacity: 0; width: 0; height: 0; }
+.ssca-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 24px;
+  transition: .2s;
+}
+.ssca-toggle-slider:before {
+  content: "";
+  position: absolute;
+  width: 18px; height: 18px;
+  left: 3px; bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: .2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+.ssca-toggle input:checked + .ssca-toggle-slider { background: var(--ssca-primary); }
+.ssca-toggle input:checked + .ssca-toggle-slider:before { transform: translateX(20px); }
+
+/* ── Color Field ── */
+.ssca-color-field { display: flex; gap: 8px; align-items: center; }
+.ssca-color-field input[type="color"] { width: 40px; height: 36px; padding: 2px; border-radius: 6px; cursor: pointer; }
+.ssca-hex-input { flex: 1; }
+
+/* ── Media Field ── */
+.ssca-media-field { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ssca-media-field img { border-radius: 6px; border: 1px solid var(--ssca-border); }
+.ssca-logo-placeholder {
+  width: 80px; height: 60px;
+  background: var(--ssca-light);
+  border: 1px dashed var(--ssca-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--ssca-gray);
+}
+
+/* ── Log ── */
+.ssca-log-container { padding: 0; font-family: monospace; font-size: 12px; max-height: 600px; overflow-y: auto; }
+.ssca-log-entry {
+  display: flex;
+  gap: 12px;
+  padding: 6px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: flex-start;
+}
+.ssca-log-time   { color: var(--ssca-gray); min-width: 150px; flex-shrink: 0; }
+.ssca-log-level  { min-width: 60px; font-weight: 600; flex-shrink: 0; }
+.ssca-log-info   { }
+.ssca-log-warning .ssca-log-level { color: var(--ssca-warning); }
+.ssca-log-warning { background: #fffbeb; }
+.ssca-log-error   .ssca-log-level { color: var(--ssca-danger); }
+.ssca-log-error   { background: #fef2f2; }
+
+/* ── Filters ── */
+.ssca-filters {
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ssca-filters label { font-size: 13px; color: #374151; display: flex; align-items: center; gap: 6px; }
+.ssca-filters input  { padding: 6px 10px; border: 1px solid var(--ssca-border); border-radius: 6px; font-size: 13px; }
+
+/* ── Notices ── */
+.ssca-notice {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.ssca-notice-info { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+
+/* ── Season current ── */
+.ssca-season-current {
+  background: var(--ssca-light);
+  border: 1px solid var(--ssca-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+/* ── Utilities ── */
+.ssca-text-red  { color: var(--ssca-danger) !important; }
+.ssca-muted     { color: var(--ssca-gray); font-size: 13px; padding: 16px; }
+.ssca-link      { color: var(--ssca-primary); text-decoration: none; font-size: 13px; }
+.ssca-link:hover { text-decoration: underline; }
+.ssca-loading   { padding: 40px; text-align: center; color: var(--ssca-gray); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .ssca-dashboard-grid { grid-template-columns: 1fr; }
+  .ssca-card-full      { grid-column: 1; }
+}
+@media (max-width: 768px) {
+  .ssca-stat-grid        { grid-template-columns: repeat(2, 1fr); }
+  .ssca-settings-layout  { grid-template-columns: 1fr; }
+  .ssca-settings-nav     { position: static; display: flex; flex-wrap: wrap; }
+  .ssca-settings-nav-item{ flex: 1 0 auto; }
+  .ssca-field-grid       { grid-template-columns: 1fr; }
+  .ssca-field-full       { grid-column: 1; }
+  .ssca-page-header      { flex-direction: column; }
+  .ssca-calendar         { font-size: 11px; }
+  .ssca-cal-day          { min-height: 60px; padding: 4px; }
+  .ssca-post-preview     { grid-template-columns: 1fr; }
+}
